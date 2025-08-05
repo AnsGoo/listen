@@ -1,0 +1,18 @@
+meta {
+  name: register
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{BASE_URL}}/api/auth/register
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "username": "admin6",
+    "password": "admin6"
+  }
+}

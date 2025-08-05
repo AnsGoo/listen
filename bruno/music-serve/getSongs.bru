@@ -1,0 +1,15 @@
+meta {
+  name: getSongs
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{BASE_URL}}/api/songs
+  body: none
+  auth: inherit
+}
+
+headers {
+  AUTHORIZATION: {{TOKEN}}
+}

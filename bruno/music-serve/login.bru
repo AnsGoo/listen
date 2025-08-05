@@ -1,0 +1,22 @@
+meta {
+  name: login
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{BASE_URL}}/api/auth/login
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "username": "admin",
+    "password": "admin"
+  }
+}
+
+script:post-response {
+  bru.setVar('TOKEN','Bearer '+ res.body.data.accessToken);
+}
