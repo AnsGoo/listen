@@ -4,6 +4,7 @@ mod handlers;
 mod models;
 mod routers;
 mod utils;
+mod task;
 mod middlewares; // 确保这个模块声明是公开的，并且位于正确的位置
 use actix_cors::Cors;
 mod services;
@@ -24,7 +25,7 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(move || {
         App::new()
             .app_data(web::Data::new(app_state.clone()))
-            .wrap(Logger::default().log_level(log::Level::Debug))
+            .wrap(Logger::default().log_level(log::Level::Info))
             .wrap(Cors::default()
                   .allow_any_origin()
                   .allow_any_method()

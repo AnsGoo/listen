@@ -7,7 +7,7 @@ use std::fmt;
 use std::sync::Arc;
 use crate::models::album::AlbumRepository;
 use crate::models::artist::ArtistRepository;
-use crate::models::AlbumQueryData;
+// use crate::models::AlbumQueryData;
 
 #[derive(Debug)]
 pub enum AlbumServiceError {

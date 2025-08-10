@@ -1,6 +1,6 @@
 use actix_web::{web, HttpResponse, Responder};
 // 移除SQLx引用
-use super::super::{models, AppState};
+use super::super::AppState;
 use crate::services::{self, albums::model::AlbumQueryViewObject};
 use crate::handlers::ApiResponse;
 

@@ -5,6 +5,7 @@ pub mod auth;
 pub mod artists;
 pub mod songs;
 pub mod users;
+pub mod scan;
 
 #[derive(Debug, Serialize)]
 pub struct ApiResponse<T> {

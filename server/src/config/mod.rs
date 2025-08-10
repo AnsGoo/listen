@@ -5,6 +5,9 @@ use crate::models::artist::{ArtistRepository, SeaOrmArtistRepository};
 use crate::models::song::{SongRepository, SeaOrmSongRepository};
 use crate::models::album::{AlbumRepository, SeaOrmAlbumRepository};
 use crate::models::user::{UserRepository, SeaOrmUserRepository};
+use crate::task::BackgroundActor;
+use actix::Actor;
+use actix::Addr;
 
 #[derive(Clone)]
 pub struct AppConfig {
@@ -15,6 +18,7 @@ pub struct AppConfig {
     pub song_repo: Arc<dyn SongRepository + Send + Sync>,
     pub album_repo: Arc<dyn AlbumRepository + Send + Sync>,
     pub user_repo: Arc<dyn UserRepository + Send + Sync>,
+    pub addr: Addr<BackgroundActor>,
 }
 
 impl AppConfig {
@@ -25,6 +29,8 @@ impl AppConfig {
         let jwt_secret = env::var("JWT_SECRET").expect("JWT_SECRET must be set");
         let port = env::var("PORT").unwrap_or_else(|_| "8080".to_string());
         println!("Using port: {}", port);
+        let addr = BackgroundActor.start(); 
+
         
         
         
@@ -66,6 +72,7 @@ impl AppConfig {
             song_repo,
             album_repo,
             user_repo,
+            addr
         }
     }
 }

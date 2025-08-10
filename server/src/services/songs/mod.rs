@@ -1,5 +1,4 @@
 pub mod model;
-pub mod metadata;
 use crate::models;
 use sea_orm::DbErr; 
 use uuid::Uuid;

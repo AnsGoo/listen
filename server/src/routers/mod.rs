@@ -33,6 +33,7 @@ pub fn configure(cfg: &mut web::ServiceConfig) {
                     )
                     .service(web::resource("/songs/{id}").route(web::get().to(handlers::songs::get_song_by_id)))
                     .service(web::resource("/users").route(web::get().to(handlers::users::get_users)))
+                    .service(web::resource("/scan").route(web::get().to(handlers::scan::scan_songs)))
             )
     );
 }
