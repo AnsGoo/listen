@@ -12,7 +12,7 @@ actix-web = "4.4.0"
 sea-orm = { workspace = true, features = ["sqlx-postgres", "macros", "runtime-tokio-rustls", "with-uuid", "with-chrono", "debug-print"] }
 sqlx = { version = "0.7", features = ["postgres", "runtime-tokio-native-tls", "macros", "chrono", "json"] }
 sea-orm-migration = "1.1.13"
-jsonwebtoken = "9.2.0"
+jsonwebtoken = "10.3.0"
 bcrypt = "0.15.0"
 dotenv = "0.15.0"
 serde = { version = "1.0.193", features = ["derive"] }
